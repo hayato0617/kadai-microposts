@@ -12,9 +12,15 @@ resources :users, only: [:index, :show, :new, :create] do
     member do
       get :followings
       get :followers
+      get :likes
+      #get :recieve
     end
   end
   
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  
+  
+  resources :favorites, only: [:create, :destroy]
+  
 end
